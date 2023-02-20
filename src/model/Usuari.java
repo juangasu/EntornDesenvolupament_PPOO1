@@ -74,6 +74,7 @@ public abstract class Usuari implements Comparable<Usuari> {
             return u1.compareTo(u2);
         }
         return 2; //
+
     }
 }
 

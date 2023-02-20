@@ -7,6 +7,10 @@ public class Escola {
     private int last;  // per definir el darrer inserit.
 
 
+    public String getNom() {
+        return nom;
+    }
+
     public Escola(String nom) { // sa de crear un Constructor
         this.nom = nom;
         this.usuaris = new Usuari[Max_Users]; // Es posa Max_Users perque es refactoritza per la forma MagicNumber.
@@ -44,7 +48,7 @@ public class Escola {
         last++;
     }
 
-    public Usuari[] llistaUsuaris() {
+    public Usuari[] llistarUsuaris() {
         Usuari[] usuaris = new Usuari[last]; // per no tenir nulls
         //Emplenar array amb els uauaris
         for (int i = 0; i < usuaris.length; i++) {

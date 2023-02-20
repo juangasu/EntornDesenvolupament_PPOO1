@@ -1,16 +1,19 @@
+import interficie.InterficieGrafica;
+import interficie.Terminal;
+import interficie.UserInterface;
 import model.*;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
+
+
      //   Treballador treballadorPublic = new TreballadorPublic();
         Treballador treballadorConcertat = new TreballadorConcertat();
         Professor p = new Professor(treballadorConcertat,"dni2","Juan Profe", "Siniga", "Santori", "alfdjalñj", "Info", "Info");
-
       //  int horesSuport = p.horesSuport();
         p.getDni();
         p.getEspecialitat();
@@ -38,34 +41,31 @@ public class Main {
 
 
         //pintem els usuaris
-      Usuari[] usuaris = iesManacor.llistaUsuaris();
+      Usuari[] usuaris = iesManacor.llistarUsuaris();
+
         /*  for(Usuari u:usuaris){ // "u" nom que li don a la variable
             System.out.println("usuari" + u.getNom());
         }
 
        */
 
-        //Collections.sort(Arrays.stream(usuaris).toList());
+        UserInterface userInterface;
+        System.out.println("Com vols sa interficie? ");
+        System.out.println(" 1- Terminal");
+        System.out.println(" 2- Altre Grafic");
+        Scanner scanner = new Scanner(System.in);
+        int opcio = scanner.nextInt();
 
-        for(int i=0;i<usuaris.length; i++){
+        if (opcio == 1) {
+            userInterface = new Terminal(iesManacor);
+        }else {
 
-            if(usuaris[i] == null)
-                break;
-
-            System.out.println("Dades del Usuari: ");
-            System.out.println("usuari: " + usuaris[i].getNom());
-            System.out.println("Cognom1: "+ usuaris[i].getCognom1());
-            System.out.println("Cognom2: " + usuaris[i].getCognom2());
-
-            if(usuaris[i] instanceof Alumne){
-                System.out.println("Numero d'expedient:" + ((Alumne) usuaris[i]).getNumExpediente());
-
-            } else if (usuaris[i] instanceof Professor) {
-                System.out.println("Departament: "+ ((Professor) usuaris[i]).getDepartament());
-
-            }
-            System.out.println("end");
+            userInterface = new InterficieGrafica();
         }
+
+        userInterface.pintaMenu();
+
+
 
         System.out.println(a.compareTo(b)); //compara a --> b es -1
         System.out.println(b.compareTo(a)); // compara b --> a es 1
@@ -86,4 +86,5 @@ public class Main {
   //      return null;
    // }
 
-}
+    }
+
