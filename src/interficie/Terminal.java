@@ -3,7 +3,7 @@ package interficie;
 import model.Alumne;
 import model.Escola;
 import model.Professor;
-import model.Usuari;
+import model.User;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -84,26 +84,26 @@ public class Terminal implements UserInterface {
 
     @Override
     public void llistarUsuaris() {
-        Usuari[] usuaris = this.escola.llistarUsuaris();
-        //Collections.sort(Arrays.stream(usuaris).toList());
+        User[] users = this.escola.llistarUsuaris();
+        //Collections.sort(Arrays.stream(users).toList());
 
-        for(int i=0;i<usuaris.length; i++){
+        for(int i = 0; i< users.length; i++){
 
             /*
-            if(usuaris[i] == null)
+            if(users[i] == null)
                 break;
              */
 
-            System.out.println("Dades del Usuari: ");
-            System.out.println("usuari: " + usuaris[i].getNom());
-            System.out.println("Cognom1: "+ usuaris[i].getCognom1());
-            System.out.println("Cognom2: " + usuaris[i].getCognom2());
+            System.out.println("Dades del User: ");
+            System.out.println("usuari: " + users[i].getName());
+            System.out.println("Cognom1: "+ users[i].getCognom1());
+            System.out.println("Cognom2: " + users[i].getCognom2());
 
-            if(usuaris[i] instanceof Alumne){
-                System.out.println("Numero d'expedient:" + ((Alumne) usuaris[i]).getNumExpediente());
+            if(users[i] instanceof Alumne){
+                System.out.println("Numero d'expedient:" + ((Alumne) users[i]).getNumExpediente());
 
-            } else if (usuaris[i] instanceof Professor) {
-                System.out.println("Departament: "+ ((Professor) usuaris[i]).getDepartament());
+            } else if (users[i] instanceof Professor) {
+                System.out.println("Departament: "+ ((Professor) users[i]).getDepartament());
 
             }
             System.out.println("end");

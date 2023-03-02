@@ -11,9 +11,9 @@ public class Main {
         System.out.println("Hello world!");
 
 
-     //   Treballador treballadorPublic = new TreballadorPublic();
-        Treballador treballadorConcertat = new TreballadorConcertat();
-        Professor p = new Professor(treballadorConcertat,"dni2","Juan Profe", "Siniga", "Santori", "alfdjalñj", "Info", "Info");
+     //   Worker treballadorPublic = new WorkerPublic();
+        Worker workerConcertat = new WorkerConcertat();
+        Professor p = new Professor(workerConcertat,"dni2","Juan Profe", "Siniga", "Santori", "alfdjalñj", "Info", "Info");
       //  int horesSuport = p.horesSuport();
         p.getDni();
         p.getEspecialitat();
@@ -23,14 +23,14 @@ public class Main {
 
         a.getDni();
         a.getNumExpediente();
-        //  model.Usuari u = new model.Usuari();
-        //  model.Usuari[] tothom = llistarUsuari();
+        //  model.User u = new model.User();
+        //  model.User[] tothom = llistarUsuari();
 
         Escola iesManacor = new Escola("IES Manacor");
 
         try { // aixi trectam el execption del thor
             iesManacor.addUsuari(p);
-            iesManacor .addUsuari(a); // en aquest cas podem afegir proferos (p) i alumna(a) perqeu son usuaris i aixo s'anomena POLIMORFISMA
+            iesManacor .addUsuari(a); // en aquest cas podem afegir proferos (p) i alumna(a) perqeu son users i aixo s'anomena POLIMORFISMA
         } catch (Exception e){
 
             System.out.println("No petat");
@@ -40,10 +40,10 @@ public class Main {
 
 
 
-        //pintem els usuaris
-      Usuari[] usuaris = iesManacor.llistarUsuaris();
+        //pintem els users
+      User[] users = iesManacor.llistarUsuaris();
 
-        /*  for(Usuari u:usuaris){ // "u" nom que li don a la variable
+        /*  for(User u:users){ // "u" nom que li don a la variable
             System.out.println("usuari" + u.getNom());
         }
 
@@ -82,7 +82,7 @@ public class Main {
       }
 
      */
-   // public static Usuari[] llistarUsuari() {
+   // public static User[] llistarUsuari() {
   //      return null;
    // }
 

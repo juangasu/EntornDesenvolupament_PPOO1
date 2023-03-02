@@ -1,10 +1,16 @@
 package model;
 
-public class TreballadorPrivat implements Treballador {
+public class WorkerPublic implements Worker {
+    public WorkerPublic(int numFuncionari) {
+        this.numFuncionari = numFuncionari;
+    }
+
+    private int numFuncionari;
+
     @Override
     public float calcularNomina() {
         // Connexió HTTP Conselleria (imaginam i ens retorna nombre)
-        return 3000;
+        return 1500;
     }
 
     @Override // Override sobreescriu d'un objecta superior

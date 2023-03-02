@@ -1,6 +1,7 @@
 package model;
 
-public interface Treballador {
+public interface Worker {
      float calcularNomina();
+
      float calcularIRPF();
 }

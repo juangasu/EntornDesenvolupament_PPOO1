@@ -1,16 +1,16 @@
 package model;
 
-public abstract class Usuari implements Comparable<Usuari> {
+public abstract class User implements Comparable<User> {
 
     private String dni;
-    private String nom;
+    private String name;
     private String cognom1;
     private String cognom2;
     private String email;
 
-    public Usuari(String dni, String nom, String cognom1, String cognom2, String email) {
+    public User(String dni, String name, String cognom1, String cognom2, String email) {
         this.dni = dni;
-        this.nom = nom;
+        this.name = name;
         this.cognom1 = cognom1;
         this.cognom2 = cognom2;
         this.email = email;
@@ -20,8 +20,8 @@ public abstract class Usuari implements Comparable<Usuari> {
         return dni;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
     public String getCognom1() {
@@ -40,8 +40,8 @@ public abstract class Usuari implements Comparable<Usuari> {
         this.dni = dni;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setCognom1(String cognom1) {
@@ -64,12 +64,12 @@ public abstract class Usuari implements Comparable<Usuari> {
 
     @Override
 
-    public int compareTo(Usuari u) {
+    public int compareTo(User u) {
 
         if (this.getCognom1().compareTo(u.getCognom1()) == 0) {
 
-            String u1 = this.getCognom1() + this.getCognom2() + this.getNom();
-            String u2 = u.cognom1 + u.cognom2 + u.nom;
+            String u1 = this.getCognom1() + this.getCognom2() + this.getName();
+            String u2 = u.cognom1 + u.cognom2 + u.name;
 
             return u1.compareTo(u2);
         }

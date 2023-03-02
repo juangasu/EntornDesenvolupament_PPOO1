@@ -1,6 +1,6 @@
 package model;
 
-public class Alumne extends Usuari{
+public class Alumne extends User {
     private String numExpediente;
 
     public Alumne(String dni, String nom, String cognom1, String cognom2, String email, String numExpediente) {
