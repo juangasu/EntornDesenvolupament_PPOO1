@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         System.out.println("Hello world!");
 
 
@@ -69,6 +69,25 @@ public class Main {
 
         System.out.println(a.compareTo(b)); //compara a --> b es -1
         System.out.println(b.compareTo(a)); // compara b --> a es 1
+
+
+
+
+        // Demostrar per què no modificar un paràmetre
+         int faltes = 5;
+        int faltesNoves= p.passarLlista("756362", faltes);
+        System.out.println ("Faltes: " +faltes+" Falres noves: " + faltesNoves);
+
+        //Alumne a
+         b.setCognom1("Cognom sense Modificar");
+        System.out.println("Cognom alumna abans: " +b.getCognom1());
+
+        p.passarLlista(a);
+        System.out.println("Cognom alumne despres: " + b.getCognom1());
+
+        //Expulsar Alumna
+        String nomExpulsat = p.expulsar(a);
+        a.setName(nomExpulsat);
 
     }
 

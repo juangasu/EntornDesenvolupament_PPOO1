@@ -39,5 +39,52 @@ public class Professor extends User {
 
 
     //public int hores
-}
+
+
+    public void donarNotes(String nomDepartament, String aprovat, String suspes){
+        if(this.departament.equals(nomDepartament)){
+            System.out.println("suspes");
+
+        }else {
+            System.out.println("aprovat");
+        }
+        //Imprimir Bulleti
+        System.out.println("El teu Bullati");
+    }
+
+    public void calcularNotes(){
+        if(this.departament.equals("Informatica")){
+            System.out.println("suspes");
+
+        }else {
+            System.out.println("aprovat");
+        }
+        //calculant les notes...
+        System.out.println("Calculant...");
+    }
+
+    public int passarLlista(String dniAlumne, int faltes){
+        int faltesAux = faltes; // per NO tenir que MODIFICAR un parametre sino es una variable AUXILIARdins una funció
+        //comprovar si l'alumne assisteix
+        return faltes++;
+    }
+
+    public void  passarLlista(Alumne a) throws CloneNotSupportedException {
+       Alumne b = new Alumne(a.getDni(),a.getName(),a.getCognom1(),a.getCognom2(), a.getEmail(),a.getNumExpediente());
+       Alumne c =a.clone();
+        //Comprovar si l'alumne assisteix
+
+        a.setCognom1("Cognom Modificat");
+        System.out.println("Alumne dins funcio: " + b.getCognom1());
+
+    }
+    //Expulsar he posar el seu nom " -EXPULSAT"
+    //Joan -EXPULSAT
+
+    public String expulsar(Alumne alumne){
+        return alumne.getName() + "- EXPULSAT";
+
+    }
+    }
+
 
